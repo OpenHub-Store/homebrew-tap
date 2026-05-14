@@ -9,7 +9,17 @@ brew tap OpenHub-Store/tap
 brew install --cask github-store
 ```
 
-The app is not yet signed with an Apple Developer ID. The Cask's `postflight` hook automatically strips the quarantine attribute so macOS Gatekeeper allows it to launch.
+The app is not yet signed with an Apple Developer ID, so macOS Gatekeeper
+will block it from launching ("damaged" / "cannot be opened" error).
+
+After install, run this once to allow the app to launch:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/GitHub-Store.app
+```
+
+Repeat the command after every upgrade until the app is signed and
+notarized.
 
 ## Update
 

@@ -20,11 +20,6 @@ cask "github-store" do
 
   app "GitHub-Store.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/GitHub-Store.app"]
-  end
-
   uninstall quit: "zed.rainxch.githubstore"
 
   zap trash: [
@@ -34,4 +29,17 @@ cask "github-store" do
     "~/Library/Preferences/zed.rainxch.githubstore.plist",
     "~/Library/Saved Application State/zed.rainxch.githubstore.savedState",
   ]
+
+  caveats <<~EOS
+    GitHub Store is not yet signed with an Apple Developer ID.
+    macOS Gatekeeper will block it from launching with a "damaged" or
+    "cannot be opened" error.
+
+    To allow the app to launch, run:
+
+      xattr -dr com.apple.quarantine "#{appdir}/GitHub-Store.app"
+
+    This step is required after each install or upgrade until the app is
+    signed and notarized.
+  EOS
 end
