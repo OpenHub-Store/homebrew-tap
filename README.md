@@ -6,10 +6,10 @@ Homebrew Cask distribution for [GitHub Store](https://github.com/OpenHub-Store/G
 
 ```bash
 brew tap OpenHub-Store/tap
-brew install --cask --no-quarantine github-store
+brew install --cask github-store
 ```
 
-The `--no-quarantine` flag is required because the app is not yet signed with an Apple Developer ID. Without it, macOS Gatekeeper will block the app from launching.
+The app is not yet signed with an Apple Developer ID. The Cask's `postflight` hook automatically strips the quarantine attribute so macOS Gatekeeper allows it to launch.
 
 ## Update
 

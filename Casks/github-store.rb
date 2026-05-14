@@ -16,9 +16,14 @@ cask "github-store" do
   end
 
   auto_updates false
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "GitHub-Store.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/GitHub-Store.app"]
+  end
 
   uninstall quit: "zed.rainxch.githubstore"
 
