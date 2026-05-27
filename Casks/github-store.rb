@@ -1,9 +1,9 @@
 cask "github-store" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.8.3"
-  sha256 arm:   "8a3071ed3f742c42adbb125f1f8a39b26703fbc5cb74739604a29c2399b3e10c",
-         intel: "0e360430705f64ac342bf1326ce2aac84392bb22ae3e87dc21103eae0de39eae"
+  version "1.9.0"
+  sha256 arm:   "0fbf1b02b4a81d2e37820f2cb6667d1d42e0b7a331d20434a165f7ec2ea24876",
+         intel: "4b6e9d88f7482b2c7b97e3f88b40f5684ac9dca0108015a2c5a52f530ae4907a"
 
   url "https://github.com/OpenHub-Store/GitHub-Store/releases/download/v#{version}/GitHub-Store-#{version}-#{arch}.dmg"
   name "GitHub Store"
