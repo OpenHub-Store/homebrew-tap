@@ -1,12 +1,12 @@
-# OpenHub-Store Homebrew Tap
+# Komi Store Homebrew Tap
 
-Homebrew Cask distribution for [GitHub Store](https://github.com/OpenHub-Store/GitHub-Store) and related projects.
+Homebrew Cask distribution for [Komi Store](https://github.com/kurikomi-labs/komi-store) and related projects.
 
 ## Install
 
 ```bash
-brew tap OpenHub-Store/tap
-brew install --cask github-store
+brew tap kurikomi-labs/komi-store
+brew install --cask komi-store
 ```
 
 The app is not yet signed with an Apple Developer ID, so macOS Gatekeeper
@@ -15,7 +15,7 @@ will block it from launching ("damaged" / "cannot be opened" error).
 After install, run this once to allow the app to launch:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/GitHub-Store.app
+xattr -dr com.apple.quarantine /Applications/Komi-Store.app
 ```
 
 Repeat the command after every upgrade until the app is signed and
@@ -25,22 +25,22 @@ notarized.
 
 ```bash
 brew update
-brew upgrade --cask github-store
+brew upgrade --cask komi-store
 ```
 
 ## Uninstall
 
 ```bash
-brew uninstall --cask github-store
-brew untap OpenHub-Store/tap
+brew uninstall --cask komi-store
+brew untap kurikomi-labs/komi-store
 ```
 
 ## Casks
 
 | Cask | Description | Platforms |
 |------|-------------|-----------|
-| [`github-store`](Casks/github-store.rb) | Cross-platform app store for GitHub releases | macOS (arm64, x86_64) |
+| [`komi-store`](Casks/komi-store.rb) | Cross-platform app store for GitHub releases | macOS (arm64, x86_64) |
 
 ## Issues
 
-Report Cask-specific issues here. Report app issues at [OpenHub-Store/GitHub-Store/issues](https://github.com/OpenHub-Store/GitHub-Store/issues).
+Report Cask-specific issues here. Report app issues at [kurikomi-labs/komi-store/issues](https://github.com/kurikomi-labs/komi-store/issues).
